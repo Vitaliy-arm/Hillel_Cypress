@@ -1,0 +1,2 @@
+/node_modules/    # Игнорировать всю папку node_modules
+node_modules
