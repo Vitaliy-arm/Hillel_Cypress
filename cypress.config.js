@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://ithillel.ua",
+    //baseUrl: "https://ithillel.ua",
     defaultCommandTimeout: 10000,
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
