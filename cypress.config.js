@@ -2,8 +2,8 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    //baseUrl: "https://ithillel.ua",
-    defaultCommandTimeout: 10000,
+    baseUrl: "https://guest:welcome2qauto@qauto.forstudy.space",
+    defaultCommandTimeout: 1000,
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
     video: true,
