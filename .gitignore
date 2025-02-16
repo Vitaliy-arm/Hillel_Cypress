@@ -1,2 +1,5 @@
 /node_modules/    # Игнорировать всю папку node_modules
 node_modules
+cypress/videos
+cypress/screenshots
+cypress/results
