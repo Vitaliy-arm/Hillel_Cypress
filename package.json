@@ -1,5 +1,13 @@
 {
   "devDependencies": {
-    "cypress": "^14.0.1"
+    "cypress": "^14.0.1",
+    "cypress-dotenv": "^3.0.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "scripts": {
+    "prod_env": "cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto.forstudy.space' --spec 'cypress/e2e/hillel_tests/homework_3/cy_hm3_tests.cy.js'",
+    "test_env": "cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto2.forstudy.space' --spec 'cypress/e2e/hillel_tests/homework_3/cy_hm3_tests.cy.js'"
   }
 }
