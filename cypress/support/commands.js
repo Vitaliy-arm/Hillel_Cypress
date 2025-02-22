@@ -24,8 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-
-
 Cypress.Commands.add('login', (email, password) => {
         cy.visit(Cypress.env('CYPRESS_BASE_URL'));
         //cy.visit('https://guest:welcome2qauto@qauto.forstudy.space');
@@ -52,6 +50,27 @@ Cypress.Commands.add('login', (email, password) => {
         .contains('Add car')
         .should('be.visible');
     
+});
+
+
+Cypress.Commands.add('Creates_an_expense', (carId, mileage, liters, totalCost) => {
+  cy.request({
+    method: 'POST',
+    url: `${Cypress.env('CYPRESS_BASE_URL')}/api/expenses`,
+    body: {
+      "carId": carId,
+      "reportedAt": "2025-02-22T00:00:00.000Z",
+      "mileage": mileage,
+      "liters": liters,
+      "totalCost": totalCost
+    },
+  }).then((response) => {
+    expect(response.status).to.equal(200);
+    expect(response.body.data.carId).to.equal(carId);
+    expect(response.body.data.mileage).to.equal(mileage);
+    expect(response.body.data.liters).to.equal(liters);
+    expect(response.body.data.totalCost).to.equal(totalCost);
+  });
 });
 
 Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
