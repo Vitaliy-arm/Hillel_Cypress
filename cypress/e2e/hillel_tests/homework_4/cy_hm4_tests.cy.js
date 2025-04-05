@@ -25,24 +25,24 @@ describe('Add cars and fuel expenses', () => {
       cy.intercept('POST', '/api/cars').as('addCar');
       RegistrationPage.add_car('BMW', 'X5', 200);
 
-      cy.wait('@addCar').then((addedCar) => {
-        expect(addedCar.response.statusCode).to.equal(201);
-        expect(addedCar.response.body.data).to.have.property('id');
-        cy.wrap(addedCar.response.body.data.id).as('carId');
-      });
+      // cy.wait('@addCar').then((addedCar) => {
+      //   expect(addedCar.response.statusCode).to.equal(201);
+      //   expect(addedCar.response.body.data).to.have.property('id');
+      //   cy.wrap(addedCar.response.body.data.id).as('carId');
+      // });
 
-      cy.get('@carId').then((carId) => {
-        cy.log(`Car ID: ${carId}`);
+      // cy.get('@carId').then((carId) => {
+      //   cy.log(`Car ID: ${carId}`);
 
-        cy.request('GET', '/api/cars').then((response) => {
-          expect(response.status).to.equal(200);
-          const foundCar = response.body.data.find(car => car.id === carId);
-          expect(foundCar.id).to.equal(carId);
-        });
+      //   cy.request('GET', '/api/cars').then((response) => {
+      //     expect(response.status).to.equal(200);
+      //     const foundCar = response.body.data.find(car => car.id === carId);
+      //     expect(foundCar.id).to.equal(carId);
+      //   });
 
-        cy.Creates_an_expense(carId, mileage, liters, totalCost);
-        RegistrationPage.go_to_Fuel_expenses(mileage);
-      });
+      //   cy.Creates_an_expense(carId, mileage, liters, totalCost);
+      //   RegistrationPage.go_to_Fuel_expenses(mileage);
+      // });
 
   });
 

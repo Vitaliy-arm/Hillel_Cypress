@@ -8,7 +8,8 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "scripts": {
-    "prod_env": "cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto.forstudy.space' --spec 'cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js'",
-    "test_env": "cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto2.forstudy.space' --spec 'cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js'"
+    "prod_env": "echo 'Running prod_env' && cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto.forstudy.space' --spec 'cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js'",
+    "test_env": "cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto2.forstudy.space' --spec 'cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js'",
+    "docker_env": "echo 'Running prod_env' && cypress run --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto.forstudy.space' --spec '/e2e/cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js'"
   }
 }
