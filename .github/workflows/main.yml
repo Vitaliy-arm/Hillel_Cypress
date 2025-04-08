@@ -1,0 +1,26 @@
+name: Cypress Tests on Windows (Chrome Only)
+
+on:
+  push:
+    branches: ['**']  # любой пуш в любую ветку
+  pull_request:
+    branches: ['**']
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests in this branch (Chrome)
+        run: npm run docker_env
