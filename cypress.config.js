@@ -3,6 +3,7 @@ require('dotenv').config();
 
 module.exports = defineConfig({
   e2e: {
+    specPattern: 'cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js',
     
     env: { 
       baseUrl: process.env.CYPRESS_BASE_URL,
