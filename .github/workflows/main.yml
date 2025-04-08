@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests in this branch (Chrome)
-        run: npm run docker_env
+        run: npm run prod_env
