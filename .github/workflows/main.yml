@@ -2,7 +2,7 @@ name: Cypress Tests on Windows (Chrome Only)
 
 on:
   push:
-    branches: ['**']  # любой пуш в любую ветку
+    branches: ['**']
   pull_request:
     branches: ['**']
 
@@ -22,5 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Cypress tests in this branch (Chrome)
-        run: npm run prod_env
+      - name: Run Cypress directly (Chrome)
+        run: |
+          npx cypress run ^
+            --env CYPRESS_BASE_URL='https://guest:welcome2qauto@qauto.forstudy.space' ^
+            --spec "cypress/e2e/hillel_tests/homework_4/cy_hm4_tests.cy.js" ^
+            --browser chrome
